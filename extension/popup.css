@@ -1,0 +1,101 @@
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --ink: #152238;
+  --muted: #4b5f82;
+  --accent: #0077cc;
+  --accent-2: #0fa3b1;
+  --danger: #bf2c2c;
+  --border: #d7e1f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top right, #e3eefc, var(--bg));
+  color: var(--ink);
+  width: 380px;
+}
+
+.app {
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(20, 34, 56, 0.06);
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-right: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  font: inherit;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+#replyPreference {
+  min-height: 74px;
+}
+
+.message {
+  min-height: 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.message.error {
+  color: var(--danger);
+}

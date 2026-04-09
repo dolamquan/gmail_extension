@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Assistant</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Email Assistant</h1>
+
+      <section class="panel">
+        <p id="authStatus">Checking Gmail connection...</p>
+        <button id="connectBtn">Connect Gmail</button>
+        <button id="analyzeBtn">Analyze Current Thread</button>
+      </section>
+
+      <section class="panel">
+        <h2>Reply Preferences</h2>
+        <textarea
+          id="replyPreference"
+          rows="3"
+          placeholder="Example: Make it friendly, concise, and include a clear next step."
+        ></textarea>
+      </section>
+
+      <section class="panel">
+        <h2>Summary</h2>
+        <p id="summary">No analysis yet.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Sender Intent</h2>
+        <p id="senderIntent">No analysis yet.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Action Items</h2>
+        <ul id="actionItems">
+          <li>None</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Deadlines</h2>
+        <ul id="deadlines">
+          <li>None</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Suggested Reply</h2>
+        <textarea id="suggestedReply" rows="8" placeholder="Suggested reply appears here"></textarea>
+        <button id="createDraftBtn">Create Draft</button>
+      </section>
+
+      <p id="message" class="message"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
