@@ -19,7 +19,12 @@ let lastAnalysisMetadata = {
 
 function setMessage(text, isError = false) {
   messageEl.textContent = text;
+  messageEl.classList.remove("success");
   messageEl.classList.toggle("error", isError);
+  const isSuccess = /complete|success|created/i.test(text || "");
+  if (text && !isError && isSuccess) {
+    messageEl.classList.add("success");
+  }
 }
 
 function setList(element, items) {
@@ -60,8 +65,12 @@ async function refreshAuthStatus() {
   try {
     const data = await fetchJson(`${API_BASE}/auth/status`);
     authStatusEl.textContent = data.authenticated ? "Gmail connected" : "Gmail not connected";
+    authStatusEl.classList.remove("offline");
+    authStatusEl.classList.toggle("connected", Boolean(data.authenticated));
   } catch (_error) {
     authStatusEl.textContent = "Backend unavailable";
+    authStatusEl.classList.remove("connected");
+    authStatusEl.classList.add("offline");
   }
 }
 

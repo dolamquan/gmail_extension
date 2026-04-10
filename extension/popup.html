@@ -8,16 +8,25 @@
   </head>
   <body>
     <main class="app">
-      <h1>Email Assistant</h1>
+      <header class="hero">
+        <p class="eyebrow">Gmail Companion</p>
+        <h1>Email Assistant</h1>
+        <p class="hero-copy">Summarize fast, spot risks, and draft confident replies without leaving Gmail.</p>
+      </header>
 
-      <section class="panel">
-        <p id="authStatus">Checking Gmail connection...</p>
-        <button id="connectBtn">Connect Gmail</button>
-        <button id="analyzeBtn">Analyze Current Thread</button>
+      <section class="panel panel-control">
+        <div class="status-row">
+          <p class="label">Connection</p>
+          <p id="authStatus" class="status-pill">Checking Gmail connection...</p>
+        </div>
+        <div class="button-row">
+          <button id="connectBtn" class="btn btn-secondary">Connect Gmail</button>
+          <button id="analyzeBtn" class="btn btn-primary">Analyze Current Thread</button>
+        </div>
       </section>
 
       <section class="panel">
-        <h2>Reply Preferences</h2>
+        <h2>Reply Tone Preferences</h2>
         <textarea
           id="replyPreference"
           rows="3"
@@ -25,34 +34,37 @@
         ></textarea>
       </section>
 
-      <section class="panel">
+      <section class="panel insight-card">
         <h2>Summary</h2>
         <p id="summary">No analysis yet.</p>
       </section>
 
-      <section class="panel">
+      <section class="panel insight-card">
         <h2>Sender Intent</h2>
         <p id="senderIntent">No analysis yet.</p>
       </section>
 
-      <section class="panel">
-        <h2>Action Items</h2>
-        <ul id="actionItems">
-          <li>None</li>
-        </ul>
-      </section>
-
-      <section class="panel">
-        <h2>Deadlines</h2>
-        <ul id="deadlines">
-          <li>None</li>
-        </ul>
+      <section class="panel split-lists">
+        <article>
+          <h2>Action Items</h2>
+          <ul id="actionItems">
+            <li>None</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Deadlines</h2>
+          <ul id="deadlines">
+            <li>None</li>
+          </ul>
+        </article>
       </section>
 
       <section class="panel">
         <h2>Suggested Reply</h2>
         <textarea id="suggestedReply" rows="8" placeholder="Suggested reply appears here"></textarea>
-        <button id="createDraftBtn">Create Draft</button>
+        <div class="button-row">
+          <button id="createDraftBtn" class="btn btn-primary">Create Draft</button>
+        </div>
       </section>
 
       <p id="message" class="message"></p>

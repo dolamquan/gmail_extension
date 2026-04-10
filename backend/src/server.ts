@@ -28,7 +28,7 @@ app.use(express.json({ limit: "2mb" }));
 
 app.use(
   session({
-    name: "inbox-copilot-session",
+    name: "core-session",
     secret: getRequiredEnv("SESSION_SECRET"),
     resave: false,
     saveUninitialized: false,
